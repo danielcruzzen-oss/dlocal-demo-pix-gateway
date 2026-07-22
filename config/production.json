@@ -5,7 +5,7 @@
   "bacen": {
     "endpoint": "https://spi.bacen.gov.br/api/v2",
     "partner_bank": "sicoob",
-    "timeout_ms": 30000,
+    "timeout_ms": 3000,
     "retry_policy": {
       "max_attempts": 3,
       "backoff_ms": 500,
