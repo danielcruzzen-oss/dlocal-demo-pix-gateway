@@ -1,0 +1,28 @@
+{
+  "service": "pix-gateway",
+  "region": "br-sao-paulo-1",
+  "environment": "production",
+  "bacen": {
+    "endpoint": "https://spi.bacen.gov.br/api/v2",
+    "partner_bank": "sicoob",
+    "timeout_ms": 30000,
+    "retry_policy": {
+      "max_attempts": 3,
+      "backoff_ms": 500,
+      "jitter": true
+    }
+  },
+  "circuit_breaker": {
+    "failure_threshold": 0.5,
+    "window_seconds": 60,
+    "half_open_after_seconds": 30
+  },
+  "rate_limits": {
+    "requests_per_second": 500,
+    "burst": 100
+  },
+  "observability": {
+    "metrics_endpoint": "http://prometheus.pix.svc:9090",
+    "tracing_sample_rate": 0.1
+  }
+}
