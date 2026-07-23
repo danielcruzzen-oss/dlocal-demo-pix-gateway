@@ -5,7 +5,7 @@
   "red_bancaria_uy": {
     "endpoint": "https://red-bancaria.internal.dlocal/api/v3",
     "partner_bank": "brou",
-    "timeout_ms": 30000,
+    "timeout_ms": 3000,
     "retry_policy": {
       "max_attempts": 3,
       "backoff_ms": 500,
