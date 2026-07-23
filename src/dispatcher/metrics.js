@@ -2,17 +2,17 @@
 
 const client = require('prom-client');
 
-const bacenLatency = new client.Histogram({
-  name: 'pix_bacen_request_duration_seconds',
-  help: 'BACEN SPI request duration in seconds',
+const dispatchLatency = new client.Histogram({
+  name: 'pagos_uy_dispatch_duration_seconds',
+  help: 'Duración de las solicitudes a la Red Bancaria Uruguay en segundos',
   labelNames: ['partner_bank', 'result'],
   buckets: [0.1, 0.5, 1, 2, 3, 5, 10, 30],
 });
 
 const dispatcherErrors = new client.Counter({
-  name: 'pix_dispatcher_errors_total',
-  help: 'Total dispatcher errors',
+  name: 'pagos_uy_dispatcher_errors_total',
+  help: 'Total de errores del dispatcher',
   labelNames: ['reason'],
 });
 
-module.exports = { bacenLatency, dispatcherErrors };
+module.exports = { dispatchLatency, dispatcherErrors };
